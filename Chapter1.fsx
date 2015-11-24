@@ -24,7 +24,12 @@ wb.Countries.``Czech Republic``.Indicators
 // Calling the Open Weather Map REST API
 // --------------------------------------------------------
 
-type Weather = JsonProvider<"http://api.openweathermap.org/data/2.5/forecast/daily?units=metric&q=Prague">
+// The Open Weather Map API now requires a (quick and free)
+// registration. To make the tutorials easier to run, I 
+// include a sample API key in the source code, but please
+// obtain your own API key for any serious usage!
+// (Visit: http://openweathermap.org/appid)
+type Weather = JsonProvider<"http://api.openweathermap.org/data/2.5/forecast/daily?units=metric&q=Prague&APPID=cb63a1cf33894de710a1e3a64f036a27">
 
 // Print the weather forecast (type '.' after 'day' to
 // see what other information is returned from the service)
@@ -35,7 +40,7 @@ for day in w.List do
 
 
 let baseUrl = "http://api.openweathermap.org/data/2.5"
-let forecastUrl = baseUrl + "/forecast/daily?units=metric&q="
+let forecastUrl = baseUrl + "/forecast/daily?APPID=cb63a1cf33894de710a1e3a64f036a27&units=metric&q="
 
 /// Returns the maximal expected temperature for tomorrow
 /// for a specified place in the world (typically a city)
